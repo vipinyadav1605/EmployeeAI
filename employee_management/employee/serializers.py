@@ -373,7 +373,7 @@ class EmployeeRegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)
     password2 = serializers.CharField(write_only=True, min_length=8)
 
-    #  accept both UUID or name
+    # accept both UUID or name
     department = serializers.CharField(required=False)
     position = serializers.CharField(required=False)
     role = serializers.CharField()
@@ -381,62 +381,111 @@ class EmployeeRegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
         fields = [
-            'empId', 'name', 'email', 'password', 'password2',
-            'phone', 'department', 'position', 'role',
-            'date_of_birth', 'employment_type'
-        ] 
+            'empId',
+            'name',
+            'email',
+            'password',
+            'password2',
+            'phone',
+            'department',
+            'position',
+            'role',
+            'date_of_birth',
+            'employment_type'
+        ]
 
     def validate(self, data):
-        if data['password'] != data.pop('password2'):
-            raise serializers.ValidationError({"password": "Passwords don't match"})
+
+        if data['password'] != data['password2']:
+            raise serializers.ValidationError({
+                "password": "Passwords don't match"
+            })
 
         if Employee.objects.filter(email=data['email']).exists():
-            raise serializers.ValidationError({"email": "Email already exists"})
+            raise serializers.ValidationError({
+                "email": "Email already exists"
+            })
 
         if Employee.objects.filter(empId=data['empId']).exists():
-            raise serializers.ValidationError({"empId": "Employee ID already exists"})
+            raise serializers.ValidationError({
+                "empId": "Employee ID already exists"
+            })
 
         return data
 
-    #  helper function (core logic)
+    # helper function
     def get_object(self, model, value, field_name):
+
         if not value:
             return None
 
-        # try UUID
+        # Try UUID
         try:
             uuid_obj = uuid.UUID(value)
-            return model.objects.filter(id=uuid_obj).first()
+
+            obj = model.objects.filter(id=uuid_obj).first()
+
+            if obj:
+                return obj
+
         except:
             pass
 
-        # fallback to name/title
+        # Department
         if model == Department:
-            obj = model.objects.filter(name__iexact=value).first()
-        elif model == Position:
-            obj = model.objects.filter(title__iexact=value).first()
+
+            obj, _ = model.objects.get_or_create(
+                name=value,
+                defaults={
+                    "code": value[:3].upper()
+                }
+            )
+
+        # Role
         elif model == Role:
-            obj = model.objects.filter(name__iexact=value).first()
+
+            obj, _ = model.objects.get_or_create(
+                name=value
+            )
+
         else:
             obj = None
-
-        if not obj:
-            raise serializers.ValidationError({field_name: f"Invalid {field_name}"})
 
         return obj
 
     def create(self, validated_data):
-        password = validated_data.pop('password')
 
+        password = validated_data.pop('password', None)
+        validated_data.pop('password2', None)
         department_val = validated_data.pop('department', None)
         position_val = validated_data.pop('position', None)
         role_val = validated_data.pop('role')
+        department = self.get_object(
+            Department,
+            department_val,
+            "department"
+        )
 
-        # handle both UUID + name
-        department = self.get_object(Department, department_val, "department")
-        position = self.get_object(Position, position_val, "position")
-        role = self.get_object(Role, role_val, "role")
+        
+        role, _ = Role.objects.get_or_create(
+            name=role_val
+        )
 
+        # ================= POSITION =================
+        position = None
+
+        if position_val and department:
+
+            position, _ = Position.objects.get_or_create(
+                title=position_val,
+                department=department,
+                defaults={
+                    "salary_min": 10000,
+                    "salary_max": 50000,
+                    "level": 1,
+                    "required_experience": 0,
+                }
+            )
         employee = Employee(
             department=department,
             position=position,
@@ -448,8 +497,6 @@ class EmployeeRegisterSerializer(serializers.ModelSerializer):
         employee.save()
 
         return employee
-
-
 class EmployeeUpdateSerializer(serializers.ModelSerializer):
     """For updating employee information"""
     class Meta:
@@ -471,10 +518,6 @@ class EmployeePasswordChangeSerializer(serializers.Serializer):
         if data['new_password'] != data['new_password2']:
             raise serializers.ValidationError({"new_password": "Passwords don't match"})
         return data
-
-
-# ============== AUDIT LOG SERIALIZER ==============
-
 class EmployeeAuditLogSerializer(serializers.ModelSerializer):
     employee_name = serializers.CharField(source='employee.name', read_only=True)
     changed_by_name = serializers.CharField(source='changed_by.name', read_only=True)

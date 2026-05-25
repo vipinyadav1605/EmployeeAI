@@ -5317,3 +5317,950 @@ Traceback (most recent call last):
 RuntimeError: generator raised StopIteration
 ERROR 2026-04-26 09:42:14,261 basehttp 10692 5320 "POST /api/ai-agent/ HTTP/1.1" 500 236998
 INFO 2026-05-05 16:14:23,751 autoreload 13024 20948 Watching for file changes with StatReloader
+INFO 2026-05-06 05:55:33,087 autoreload 8596 8096 Watching for file changes with StatReloader
+INFO 2026-05-06 05:59:40,507 autoreload 14028 15204 Watching for file changes with StatReloader
+INFO 2026-05-06 06:27:21,951 autoreload 7380 13464 Watching for file changes with StatReloader
+INFO 2026-05-06 06:50:32,751 autoreload 5820 4696 Watching for file changes with StatReloader
+INFO 2026-05-06 07:30:55,569 autoreload 13996 5632 Watching for file changes with StatReloader
+INFO 2026-05-06 07:32:19,754 basehttp 13996 1232 "GET / HTTP/1.1" 200 35
+WARNING 2026-05-06 07:32:21,294 log 13996 1232 Not Found: /favicon.ico
+WARNING 2026-05-06 07:32:21,298 basehttp 13996 1232 "GET /favicon.ico HTTP/1.1" 404 2327
+INFO 2026-05-06 07:35:48,667 autoreload 11216 14000 Watching for file changes with StatReloader
+INFO 2026-05-06 07:37:55,491 basehttp 11216 13792 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+WARNING 2026-05-06 07:37:55,647 log 11216 13792 Bad Request: /api/auth/register/
+WARNING 2026-05-06 07:37:55,649 basehttp 11216 13792 "POST /api/auth/register/ HTTP/1.1" 400 35
+WARNING 2026-05-06 07:40:15,355 log 11216 13792 Bad Request: /api/auth/register/
+WARNING 2026-05-06 07:40:15,376 basehttp 11216 13792 "POST /api/auth/register/ HTTP/1.1" 400 35
+WARNING 2026-05-06 07:40:17,280 log 11216 13792 Bad Request: /api/auth/register/
+WARNING 2026-05-06 07:40:17,284 basehttp 11216 13792 "POST /api/auth/register/ HTTP/1.1" 400 35
+INFO 2026-05-06 07:42:53,052 autoreload 11216 14000 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py changed, reloading.
+INFO 2026-05-06 07:43:00,670 autoreload 12540 13320 Watching for file changes with StatReloader
+INFO 2026-05-06 07:52:46,764 autoreload 12772 13332 Watching for file changes with StatReloader
+ERROR 2026-05-06 07:53:39,752 log 12772 13832 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+employee.models.Position.DoesNotExist: Position matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "salary_min" of relation "employee_position" violates not-null constraint
+DETAIL:  Failing row contains (d81e87e2-195a-4e31-90f0-2516dbca150b, Python Developer, , null, null, null, null, t, 2026-05-06 02:23:39.357889+00, 2026-05-06 02:23:39.357889+00, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    serializer.save()
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 436, in create
+    position = self.get_object(Position, position_val, "position")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 419, in get_object
+    obj, _ = model.objects.get_or_create(title=value)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "salary_min" of relation "employee_position" violates not-null constraint
+DETAIL:  Failing row contains (d81e87e2-195a-4e31-90f0-2516dbca150b, Python Developer, , null, null, null, null, t, 2026-05-06 02:23:39.357889+00, 2026-05-06 02:23:39.357889+00, null).
+
+ERROR 2026-05-06 07:53:39,780 basehttp 12772 13832 "POST /api/auth/register/ HTTP/1.1" 500 233062
+ERROR 2026-05-06 07:54:11,813 log 12772 13832 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+employee.models.Department.DoesNotExist: Department matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "employee_department_code_key"
+DETAIL:  Key (code)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    serializer.save()
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 435, in create
+    department = self.get_object(Department, department_val, "department")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 417, in get_object
+    obj, _ = model.objects.get_or_create(name=value)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "employee_department_code_key"
+DETAIL:  Key (code)=() already exists.
+
+ERROR 2026-05-06 07:54:11,821 basehttp 12772 13832 "POST /api/auth/register/ HTTP/1.1" 500 229746
+INFO 2026-05-24 20:58:53,250 autoreload 11596 12592 Watching for file changes with StatReloader
+INFO 2026-05-24 21:03:37,731 basehttp 11596 14288 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+ERROR 2026-05-24 21:03:39,090 log 11596 14288 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+employee.models.Department.DoesNotExist: Department matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "employee_department_code_key"
+DETAIL:  Key (code)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    serializer.save()
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 435, in create
+    department = self.get_object(Department, department_val, "department")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 417, in get_object
+    obj, _ = model.objects.get_or_create(name=value)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "employee_department_code_key"
+DETAIL:  Key (code)=() already exists.
+
+ERROR 2026-05-24 21:03:39,117 basehttp 11596 14288 "POST /api/auth/register/ HTTP/1.1" 500 231137
+ERROR 2026-05-24 21:04:34,824 log 11596 14288 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+employee.models.Department.DoesNotExist: Department matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "employee_department_code_key"
+DETAIL:  Key (code)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    serializer.save()
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 435, in create
+    department = self.get_object(Department, department_val, "department")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 417, in get_object
+    obj, _ = model.objects.get_or_create(name=value)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "employee_department_code_key"
+DETAIL:  Key (code)=() already exists.
+
+ERROR 2026-05-24 21:04:34,840 basehttp 11596 14288 "POST /api/auth/register/ HTTP/1.1" 500 231137
+INFO 2026-05-24 21:10:02,640 autoreload 11596 12592 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py changed, reloading.
+INFO 2026-05-24 21:10:14,455 autoreload 15356 4176 Watching for file changes with StatReloader
+ERROR 2026-05-24 21:11:24,726 log 15356 2500 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+employee.models.Position.DoesNotExist: Position matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "salary_min" of relation "employee_position" violates not-null constraint
+DETAIL:  Failing row contains (cd1de99e-667b-4114-8a0e-7d5e998e5168, Python Developer, , null, null, null, null, t, 2026-05-24 15:41:24.436071+00, 2026-05-24 15:41:24.436071+00, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    serializer.save()
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 438, in create
+    position = self.get_object(Position, position_val, "position")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 421, in get_object
+    obj, _ = model.objects.get_or_create(title=value)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "salary_min" of relation "employee_position" violates not-null constraint
+DETAIL:  Failing row contains (cd1de99e-667b-4114-8a0e-7d5e998e5168, Python Developer, , null, null, null, null, t, 2026-05-24 15:41:24.436071+00, 2026-05-24 15:41:24.436071+00, null).
+
+ERROR 2026-05-24 21:11:24,757 basehttp 15356 2500 "POST /api/auth/register/ HTTP/1.1" 500 234442
+ERROR 2026-05-24 21:11:52,145 log 15356 2500 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+employee.models.Position.DoesNotExist: Position matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "salary_min" of relation "employee_position" violates not-null constraint
+DETAIL:  Failing row contains (a72d4c57-f3a4-4c02-86c4-facd2b7052a9, Python Developer, , null, null, null, null, t, 2026-05-24 15:41:51.863537+00, 2026-05-24 15:41:51.863537+00, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    serializer.save()
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 438, in create
+    position = self.get_object(Position, position_val, "position")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 421, in get_object
+    obj, _ = model.objects.get_or_create(title=value)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "salary_min" of relation "employee_position" violates not-null constraint
+DETAIL:  Failing row contains (a72d4c57-f3a4-4c02-86c4-facd2b7052a9, Python Developer, , null, null, null, null, t, 2026-05-24 15:41:51.863537+00, 2026-05-24 15:41:51.863537+00, null).
+
+ERROR 2026-05-24 21:11:52,155 basehttp 15356 2500 "POST /api/auth/register/ HTTP/1.1" 500 234455
+INFO 2026-05-24 21:12:14,105 basehttp 15356 2500 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2026-05-24 21:12:14,122 log 15356 2500 Unauthorized: /api/auth/login/
+WARNING 2026-05-24 21:12:14,124 basehttp 15356 2500 "POST /api/auth/login/ HTTP/1.1" 401 32
+INFO 2026-05-24 21:12:14,143 basehttp 15356 2500 "OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+WARNING 2026-05-24 21:12:14,163 log 15356 2500 Bad Request: /api/auth/token/refresh/
+WARNING 2026-05-24 21:12:14,227 basehttp 15356 2500 "POST /api/auth/token/refresh/ HTTP/1.1" 400 43
+WARNING 2026-05-24 21:12:38,578 log 15356 2500 Unauthorized: /api/auth/login/
+WARNING 2026-05-24 21:12:38,581 basehttp 15356 2500 "POST /api/auth/login/ HTTP/1.1" 401 32
+WARNING 2026-05-24 21:12:38,617 log 15356 2500 Bad Request: /api/auth/token/refresh/
+WARNING 2026-05-24 21:12:38,622 basehttp 15356 2500 "POST /api/auth/token/refresh/ HTTP/1.1" 400 43
+INFO 2026-05-25 05:35:36,584 autoreload 15356 4176 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py changed, reloading.
+INFO 2026-05-25 05:36:13,761 autoreload 17208 5992 Watching for file changes with StatReloader
+INFO 2026-05-25 05:48:08,181 basehttp 17208 15192 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+ERROR 2026-05-25 05:48:09,471 log 17208 15192 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    }, status=status.HTTP_201_CREATED)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 266, in __set__
+    raise ValueError(
+ValueError: Cannot assign "'Development'": "Employee.department" must be a "Department" instance.
+ERROR 2026-05-25 05:48:09,569 basehttp 17208 15192 "POST /api/auth/register/ HTTP/1.1" 500 154092
+ERROR 2026-05-25 05:48:42,834 log 17208 15192 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 54, in Register
+    }, status=status.HTTP_201_CREATED)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 266, in __set__
+    raise ValueError(
+ValueError: Cannot assign "'IT'": "Employee.department" must be a "Department" instance.
+ERROR 2026-05-25 05:48:42,841 basehttp 17208 15192 "POST /api/auth/register/ HTTP/1.1" 500 153957
+INFO 2026-05-25 05:54:11,373 autoreload 17208 5992 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py changed, reloading.
+INFO 2026-05-25 05:54:28,345 autoreload 10072 7596 Watching for file changes with StatReloader
+ERROR 2026-05-25 05:56:13,750 log 10072 16424 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 49, in Register
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 429, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 399, in validate
+    if data['password'] != data('password2'):
+                           ^^^^^^^^^^^^^^^^^
+TypeError: 'collections.OrderedDict' object is not callable
+ERROR 2026-05-25 05:56:13,774 basehttp 10072 16424 "POST /api/auth/register/ HTTP/1.1" 500 134532
+INFO 2026-05-25 05:57:58,698 autoreload 10072 7596 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py changed, reloading.
+INFO 2026-05-25 05:58:07,954 autoreload 16952 8780 Watching for file changes with StatReloader
+ERROR 2026-05-25 05:59:45,811 log 16952 17672 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\views.py", line 50, in Register
+    serializer.save()
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py", line 491, in create
+    employee = Employee(
+               ^^^^^^^^^
+  File "C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\django\db\models\base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Employee() got unexpected keyword arguments: 'password2'
+ERROR 2026-05-25 05:59:45,842 basehttp 16952 17672 "POST /api/auth/register/ HTTP/1.1" 500 136286
+INFO 2026-05-25 06:00:04,400 autoreload 16952 8780 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py changed, reloading.
+INFO 2026-05-25 06:00:17,371 autoreload 15488 5136 Watching for file changes with StatReloader
+INFO 2026-05-25 06:04:00,615 autoreload 15488 5136 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\serializers.py changed, reloading.
+INFO 2026-05-25 06:04:15,538 autoreload 17536 7348 Watching for file changes with StatReloader
+INFO 2026-05-25 06:05:16,166 basehttp 17536 4952 "POST /api/auth/register/ HTTP/1.1" 201 273
+INFO 2026-05-25 06:05:26,610 basehttp 17536 4952 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2026-05-25 06:05:30,268 basehttp 17536 4952 "POST /api/auth/login/ HTTP/1.1" 200 644
+INFO 2026-05-25 06:05:31,029 basehttp 17536 4952 "OPTIONS /api/employees/?page=1&limit=1 HTTP/1.1" 200 0
+INFO 2026-05-25 06:05:31,220 basehttp 17536 4952 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+INFO 2026-05-25 06:05:31,294 basehttp 17536 9884 "OPTIONS /api/leaves/?status=pending HTTP/1.1" 200 0
+INFO 2026-05-25 06:05:31,328 basehttp 17536 4952 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:05:31,644 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:05:31,646 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-05-25 06:05:31,666 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:05:31,704 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-05-25 06:05:54,495 basehttp 17536 9884 "OPTIONS /api/leaves/?page=1&limit=20 HTTP/1.1" 200 0
+INFO 2026-05-25 06:05:54,495 basehttp 17536 4952 "OPTIONS /api/leaves/?page=1&limit=20 HTTP/1.1" 200 0
+WARNING 2026-05-25 06:05:54,532 log 17536 4952 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:05:54,586 basehttp 17536 4952 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+WARNING 2026-05-25 06:05:54,728 log 17536 4952 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:05:54,738 basehttp 17536 4952 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+INFO 2026-05-25 06:06:01,425 basehttp 17536 10296 "OPTIONS /api/employees/ HTTP/1.1" 200 0
+INFO 2026-05-25 06:06:01,431 basehttp 17536 3528 "OPTIONS /api/employees/ HTTP/1.1" 200 0
+INFO 2026-05-25 06:06:01,617 basehttp 17536 10296 "GET /api/employees/ HTTP/1.1" 200 452
+INFO 2026-05-25 06:06:01,670 basehttp 17536 10296 "GET /api/employees/ HTTP/1.1" 200 452
+INFO 2026-05-25 06:06:05,672 basehttp 17536 10296 "GET /api/employees/ HTTP/1.1" 200 452
+INFO 2026-05-25 06:06:05,732 basehttp 17536 10296 "GET /api/employees/ HTTP/1.1" 200 452
+INFO 2026-05-25 06:06:16,385 basehttp 17536 3528 "OPTIONS /api/ml/feature_importance/ HTTP/1.1" 200 0
+INFO 2026-05-25 06:06:16,386 basehttp 17536 10296 "OPTIONS /api/ml/feature_importance/ HTTP/1.1" 200 0
+INFO 2026-05-25 06:06:16,682 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:16,943 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:25,753 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:25,885 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:32,533 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:32,679 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:37,475 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:37,635 basehttp 17536 10296 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-05-25 06:06:54,799 basehttp 17536 10296 "OPTIONS /api/ai-chat/ HTTP/1.1" 200 0
+INFO 2026-05-25 06:06:54,810 basehttp 17536 10296 "POST /api/ai-chat/ HTTP/1.1" 200 92
+INFO 2026-05-25 06:08:20,809 basehttp 17536 4952 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:20,849 log 17536 9884 Forbidden: /api/leaves/
+INFO 2026-05-25 06:08:20,869 basehttp 17536 4952 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:20,871 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-05-25 06:08:20,898 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:20,902 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-05-25 06:08:26,221 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:26,228 basehttp 17536 9884 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+WARNING 2026-05-25 06:08:26,318 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:26,342 basehttp 17536 9884 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+INFO 2026-05-25 06:08:32,569 basehttp 17536 9884 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:32,604 log 17536 4952 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:32,627 basehttp 17536 4952 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-05-25 06:08:32,630 basehttp 17536 9884 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:32,682 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:32,683 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-05-25 06:08:37,300 basehttp 17536 9884 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:37,334 log 17536 4952 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:37,348 basehttp 17536 4952 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-05-25 06:08:37,351 basehttp 17536 9884 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:37,400 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:37,403 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-05-25 06:08:39,081 basehttp 17536 10296 "GET /api/employees/ HTTP/1.1" 200 452
+INFO 2026-05-25 06:08:39,151 basehttp 17536 10296 "GET /api/employees/ HTTP/1.1" 200 452
+INFO 2026-05-25 06:08:41,468 basehttp 17536 10296 "OPTIONS /api/chat-conversations/ HTTP/1.1" 200 0
+INFO 2026-05-25 06:08:41,539 basehttp 17536 10296 "POST /api/chat-conversations/ HTTP/1.1" 201 234
+INFO 2026-05-25 06:08:58,985 basehttp 17536 9884 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:59,031 log 17536 4952 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:59,042 basehttp 17536 4952 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-05-25 06:08:59,053 basehttp 17536 9884 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
+WARNING 2026-05-25 06:08:59,115 log 17536 9884 Forbidden: /api/leaves/
+WARNING 2026-05-25 06:08:59,117 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63

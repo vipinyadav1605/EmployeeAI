@@ -35,3 +35,29 @@ django-import-export==3.3.3
 djangorestframework-api-key>=2.0.0
 # Optional: For Async tasks
 django-celery-beat>=2.5.0
+langchain-openai
+
+
+# AI / LangChain
+langchain
+langchain-openai
+langchain-community
+langchain-core
+langchain-huggingface
+langgraph
+
+# HuggingFace
+transformers
+huggingface_hub
+
+# ML
+pandas
+scikit-learn
+joblib
+
+# Vector DB
+faiss-cpu
+pypdf
+torch
+sentence-transformers
+python-dotenv
