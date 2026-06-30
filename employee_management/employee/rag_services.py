@@ -1,10 +1,9 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings, HuggingFaceEndpoint
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableLambda
-from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnableLambda, RunnableParallel, RunnablePassthrough
 from decouple import config
 VECTOR_DB_PATH = "faiss_index"
 
@@ -14,13 +13,13 @@ embeddings = HuggingFaceEmbeddings(
 )
 
 #  LLM (Better than HuggingFaceHub old version)
-llm = HuggingFaceEndpoint(
-    # repo_id="google/flan-t5-base",
-    repo_id = "mistralai/Mistral-7B-Instruct-v0.2",
+from langchain_google_genai import ChatGoogleGenerativeAI
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",
+    google_api_key=config("GEMINI_API_KEY"),
     temperature=0.3,
-    max_new_tokens=512,
-    huggingfacehub_api_token=config("HUGGINGFACEHUB_API_TOKEN")
 )
+
 
 #  Step 1: Create Vector DB
 def create_vector_db(file_path):
@@ -91,20 +90,25 @@ def ask_rag(question):
     # result = main_chain.invoke(question)
     # result = main_chain.invoke({"question": question})
     docs = retriever.invoke(question)
-    context = "\n\n".join([doc.page_content for doc in docs])
 
-    print("Context ready")
+    context = "\n\n".join(
+    doc.page_content for doc in docs
+)
 
-    # result = llm.invoke(f"""
-    # Answer only from context:
+    response = llm.invoke(f"""
+You are an intelligent assistant.
 
-    # {context}
+Answer ONLY from the given context.
 
-    # Question: {question}
-    # """)
-    # result=llm.invoke("Hello, how are you?")
-    # print("LLM response:", result)
+If the answer is not available, say:
+"I don't know."
 
-    # return str(result)
-    return "here is your answer for this query"
+Context:
+{context}
+
+Question:
+{question}
+""")
+
+    return response.content
     

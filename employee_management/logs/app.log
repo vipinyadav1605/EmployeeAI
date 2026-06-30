@@ -6264,3 +6264,151 @@ WARNING 2026-05-25 06:08:59,042 basehttp 17536 4952 "GET /api/leaves/?status=pen
 INFO 2026-05-25 06:08:59,053 basehttp 17536 9884 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 452
 WARNING 2026-05-25 06:08:59,115 log 17536 9884 Forbidden: /api/leaves/
 WARNING 2026-05-25 06:08:59,117 basehttp 17536 9884 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 11:23:25,226 autoreload 14464 10280 Watching for file changes with StatReloader
+INFO 2026-06-30 11:32:43,897 basehttp 14464 14488 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2026-06-30 11:32:46,082 log 14464 14488 Unauthorized: /api/auth/login/
+WARNING 2026-06-30 11:32:46,131 basehttp 14464 14488 "POST /api/auth/login/ HTTP/1.1" 401 32
+INFO 2026-06-30 11:32:46,596 basehttp 14464 14488 "OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+WARNING 2026-06-30 11:32:46,723 log 14464 14488 Bad Request: /api/auth/token/refresh/
+WARNING 2026-06-30 11:32:46,833 basehttp 14464 14488 "POST /api/auth/token/refresh/ HTTP/1.1" 400 43
+WARNING 2026-06-30 11:33:12,342 log 14464 14488 Unauthorized: /api/auth/login/
+WARNING 2026-06-30 11:33:12,369 basehttp 14464 14488 "POST /api/auth/login/ HTTP/1.1" 401 32
+WARNING 2026-06-30 11:33:12,498 log 14464 14488 Bad Request: /api/auth/token/refresh/
+WARNING 2026-06-30 11:33:12,586 basehttp 14464 14488 "POST /api/auth/token/refresh/ HTTP/1.1" 400 43
+INFO 2026-06-30 11:43:12,455 basehttp 14464 1444 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+WARNING 2026-06-30 11:43:12,821 log 14464 1444 Bad Request: /api/auth/register/
+WARNING 2026-06-30 11:43:12,826 basehttp 14464 1444 "POST /api/auth/register/ HTTP/1.1" 400 54
+INFO 2026-06-30 11:43:24,473 basehttp 14464 1444 "POST /api/auth/register/ HTTP/1.1" 201 286
+INFO 2026-06-30 11:43:44,359 basehttp 14464 1444 "POST /api/auth/login/ HTTP/1.1" 200 651
+INFO 2026-06-30 11:43:45,018 basehttp 14464 1444 "OPTIONS /api/employees/?page=1&limit=1 HTTP/1.1" 200 0
+INFO 2026-06-30 11:43:45,247 basehttp 14464 1444 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+INFO 2026-06-30 11:43:45,293 basehttp 14464 15036 "OPTIONS /api/leaves/?status=pending HTTP/1.1" 200 0
+INFO 2026-06-30 11:43:45,328 basehttp 14464 1444 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 11:43:45,599 log 14464 15036 Forbidden: /api/leaves/
+WARNING 2026-06-30 11:43:45,601 basehttp 14464 15036 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 11:43:45,625 log 14464 15036 Forbidden: /api/leaves/
+WARNING 2026-06-30 11:43:45,638 basehttp 14464 15036 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 11:43:56,028 basehttp 14464 15036 "OPTIONS /api/leaves/?page=1&limit=20 HTTP/1.1" 200 0
+WARNING 2026-06-30 11:43:56,060 log 14464 15036 Forbidden: /api/leaves/
+WARNING 2026-06-30 11:43:56,078 basehttp 14464 15036 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+WARNING 2026-06-30 11:43:56,232 log 14464 15036 Forbidden: /api/leaves/
+WARNING 2026-06-30 11:43:56,251 basehttp 14464 15036 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+INFO 2026-06-30 11:44:25,303 basehttp 14464 12136 "OPTIONS /api/employees/ HTTP/1.1" 200 0
+INFO 2026-06-30 11:44:25,304 basehttp 14464 15268 "OPTIONS /api/employees/ HTTP/1.1" 200 0
+INFO 2026-06-30 11:44:25,602 basehttp 14464 15268 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 11:44:25,664 basehttp 14464 15268 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 11:44:50,679 basehttp 14464 15268 "OPTIONS /api/ai-chat/ HTTP/1.1" 200 0
+INFO 2026-06-30 11:44:50,696 basehttp 14464 15268 "POST /api/ai-chat/ HTTP/1.1" 200 92
+INFO 2026-06-30 11:45:11,055 basehttp 14464 15268 "OPTIONS /api/rag/upload_document/ HTTP/1.1" 200 0
+INFO 2026-06-30 11:45:16,649 basehttp 14464 15268 "POST /api/rag/upload_document/ HTTP/1.1" 200 93
+INFO 2026-06-30 11:45:28,524 basehttp 14464 15268 "OPTIONS /api/rag/query/ HTTP/1.1" 200 0
+INFO 2026-06-30 11:45:28,836 basehttp 14464 15268 "POST /api/rag/query/ HTTP/1.1" 200 76
+INFO 2026-06-30 11:46:34,234 basehttp 14464 15036 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 11:46:34,280 log 14464 1444 Forbidden: /api/leaves/
+WARNING 2026-06-30 11:46:34,304 basehttp 14464 1444 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 11:46:34,307 basehttp 14464 15036 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 11:46:34,372 log 14464 15036 Forbidden: /api/leaves/
+WARNING 2026-06-30 11:46:34,377 basehttp 14464 15036 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 11:58:02,161 autoreload 14464 10280 C:\Users\vipin_new\Desktop\django\venv\Lib\site-packages\langchain_protocol\__init__.py changed, reloading.
+INFO 2026-06-30 11:59:11,230 autoreload 14024 3040 Watching for file changes with StatReloader
+INFO 2026-06-30 12:08:11,363 autoreload 6544 13808 Watching for file changes with StatReloader
+INFO 2026-06-30 12:13:19,918 basehttp 6544 4424 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+INFO 2026-06-30 12:13:20,088 basehttp 6544 4424 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:13:23,848 log 6544 4424 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:13:23,868 basehttp 6544 4424 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 12:13:24,001 log 6544 4424 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:13:24,045 basehttp 6544 4424 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:13:40,611 basehttp 6544 14096 "POST /api/rag/query/ HTTP/1.1" 200 42
+INFO 2026-06-30 12:14:04,580 basehttp 6544 14096 "POST /api/rag/query/ HTTP/1.1" 200 47
+INFO 2026-06-30 12:14:10,174 basehttp 6544 14096 "POST /api/rag/query/ HTTP/1.1" 200 47
+INFO 2026-06-30 12:14:43,857 basehttp 6544 14096 "POST /api/rag/upload_document/ HTTP/1.1" 200 93
+INFO 2026-06-30 12:15:02,498 basehttp 6544 14096 "POST /api/rag/query/ HTTP/1.1" 200 54
+INFO 2026-06-30 12:15:33,563 basehttp 6544 14096 "POST /api/rag/query/ HTTP/1.1" 200 88
+INFO 2026-06-30 12:15:56,268 basehttp 6544 14096 "POST /api/rag/query/ HTTP/1.1" 200 603
+INFO 2026-06-30 12:16:06,976 basehttp 6544 4424 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+INFO 2026-06-30 12:16:07,369 basehttp 6544 4424 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:16:07,572 log 6544 4424 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:16:07,606 basehttp 6544 4424 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 12:16:07,778 log 6544 4424 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:16:07,861 basehttp 6544 4424 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:16:30,062 basehttp 6544 14096 "POST /api/ai-chat/ HTTP/1.1" 200 114
+INFO 2026-06-30 12:18:21,202 autoreload 6544 13808 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\rag_services.py changed, reloading.
+INFO 2026-06-30 12:18:53,022 autoreload 13348 9968 Watching for file changes with StatReloader
+INFO 2026-06-30 12:25:26,607 autoreload 13348 9968 C:\Users\vipin_new\Desktop\django\project\employee_management\employee\rag_services.py changed, reloading.
+INFO 2026-06-30 12:26:00,447 autoreload 13204 2328 Watching for file changes with StatReloader
+INFO 2026-06-30 12:28:51,194 autoreload 9976 4140 Watching for file changes with StatReloader
+INFO 2026-06-30 12:30:39,163 basehttp 9976 12328 "POST /api/ai-chat/ HTTP/1.1" 200 4415
+INFO 2026-06-30 12:30:51,031 basehttp 9976 14688 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+INFO 2026-06-30 12:30:51,095 basehttp 9976 14688 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:30:51,396 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:30:51,397 basehttp 9976 11740 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 12:30:51,414 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:30:51,420 basehttp 9976 11740 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:30:54,375 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:30:54,431 log 9976 14688 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:30:54,463 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:30:54,467 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:30:54,684 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:30:54,693 basehttp 9976 11740 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:30:58,289 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:30:58,337 log 9976 14688 Forbidden: /api/leaves/
+INFO 2026-06-30 12:30:58,356 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:30:58,375 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 12:30:58,422 log 9976 14688 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:30:58,500 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:31:00,079 basehttp 9976 12328 "OPTIONS /api/ml/feature_importance/ HTTP/1.1" 200 0
+INFO 2026-06-30 12:31:00,102 basehttp 9976 14600 "OPTIONS /api/ml/feature_importance/ HTTP/1.1" 200 0
+INFO 2026-06-30 12:31:00,328 basehttp 9976 12328 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 12:31:00,497 basehttp 9976 12328 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 12:31:22,837 basehttp 9976 12328 "OPTIONS /api/ml/predict/ HTTP/1.1" 200 0
+INFO 2026-06-30 12:31:23,001 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:31:28,689 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:31:30,200 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:31:32,169 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:31:36,783 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:31:40,951 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:31:46,147 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 38
+INFO 2026-06-30 12:31:58,275 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:32:04,839 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:32:11,020 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:32:13,400 basehttp 9976 12328 "POST /api/ml/predict/ HTTP/1.1" 200 39
+INFO 2026-06-30 12:32:20,235 basehttp 9976 14688 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:32:20,331 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:32:20,338 basehttp 9976 11740 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 12:32:20,442 log 9976 11740 Forbidden: /api/leaves/
+INFO 2026-06-30 12:32:20,331 basehttp 9976 14688 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:32:20,452 basehttp 9976 11740 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:32:24,110 basehttp 9976 12328 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 12:32:24,163 basehttp 9976 12328 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 12:32:48,046 basehttp 9976 12328 "OPTIONS /api/chat-conversations/ HTTP/1.1" 200 0
+INFO 2026-06-30 12:32:48,130 basehttp 9976 12328 "POST /api/chat-conversations/ HTTP/1.1" 201 234
+INFO 2026-06-30 12:32:58,077 basehttp 9976 12328 "OPTIONS /api/ai-agent/ HTTP/1.1" 200 0
+INFO 2026-06-30 12:33:07,725 basehttp 9976 12328 "POST /api/ai-agent/ HTTP/1.1" 200 492
+INFO 2026-06-30 12:33:38,014 basehttp 9976 12328 "POST /api/ai-agent/ HTTP/1.1" 200 502
+INFO 2026-06-30 12:34:05,607 basehttp 9976 12328 "POST /api/chat-conversations/ HTTP/1.1" 201 234
+INFO 2026-06-30 12:34:22,505 basehttp 9976 12328 "POST /api/ai-agent/ HTTP/1.1" 200 495
+INFO 2026-06-30 12:34:44,890 basehttp 9976 12328 "POST /api/ai-agent/ HTTP/1.1" 200 516
+INFO 2026-06-30 12:34:53,806 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:34:53,893 log 9976 14688 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:34:53,910 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:34:53,914 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:34:54,050 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:34:54,055 basehttp 9976 11740 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 12:34:57,708 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:34:57,710 basehttp 9976 11740 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+WARNING 2026-06-30 12:34:57,734 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:34:57,771 basehttp 9976 11740 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+INFO 2026-06-30 12:35:16,319 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:35:16,518 log 9976 14688 Forbidden: /api/leaves/
+INFO 2026-06-30 12:35:16,535 basehttp 9976 11740 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:35:16,536 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 12:35:16,623 log 9976 14688 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:35:16,656 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:35:38,547 basehttp 9976 12328 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 12:35:38,601 basehttp 9976 12328 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 12:36:01,551 basehttp 9976 14688 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:36:01,585 log 9976 11740 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:36:01,599 basehttp 9976 11740 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 12:36:01,602 basehttp 9976 14688 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 12:36:01,648 log 9976 14688 Forbidden: /api/leaves/
+WARNING 2026-06-30 12:36:01,650 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63

@@ -1,25 +1,21 @@
 from langgraph.graph import StateGraph, END
-from langchain_openai import ChatOpenAI
+
 from langchain_core.messages import HumanMessage
 from .agent_tools import apply_leave_tool, get_employee_info
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.llms import HuggingFaceHub
 from langgraph.graph import StateGraph, END
-from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 from .agent_tools import apply_leave_tool, get_employee_info
-from langchain_community.llms import HuggingFaceHub
-# from langchain_community.llms import HuggingFaceEndpoint
-from langchain_huggingface import HuggingFaceEndpoint
+
 from decouple import config
+
 from typing import TypedDict
-llm = HuggingFaceEndpoint(
-    repo_id="tiiuae/falcon-7b-instruct",   # ✅ works on free API
-    task="text-generation",
-    temperature=0,
-    max_new_tokens=512,
-    huggingfacehub_api_token=config("HUGGINGFACEHUB_API_TOKEN"),
- 
+from langchain_google_genai import ChatGoogleGenerativeAI
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",
+    google_api_key=config("GEMINI_API_KEY"),
+    temperature=0.3,
 )
 
 #  Define state
@@ -33,14 +29,14 @@ class AgentState(TypedDict):
 def decide_action(state:AgentState):
     user_input = state["input"]
     prompt = f"""
-You must return ONLY one word:
+    You must return ONLY one word:
 
-- apply_leave
-- get_employee
-- respond
+    - apply_leave
+    - get_employee
+    - respond
 
-Input: {user_input}
-"""
+    Input: {user_input}
+    """
 
     response = llm.invoke(prompt)
     state["action"] = response.strip()
