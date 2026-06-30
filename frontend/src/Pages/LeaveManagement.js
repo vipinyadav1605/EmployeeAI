@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
-import { Card, Table, Button } from "../Components/common";
+import { Card, Table } from "../Components/common";
 import { leaveAPI } from "../services/api";
 
 export default function LeaveManagement() {

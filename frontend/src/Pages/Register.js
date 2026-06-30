@@ -67,169 +67,217 @@ export default function Register() {
     }
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20"></div>
+  const fieldClass =
+    "w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition";
 
-      <div className="relative w-full max-w-2xl">
-        <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-10 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-4 shadow-md">
-              <span className="text-2xl font-bold text-blue-600">EH</span>
+  return (
+    <div className="min-h-screen grid lg:grid-cols-[1fr_640px] bg-slate-50">
+      <section className="hidden lg:flex flex-col justify-between bg-slate-950 text-white p-10">
+        <div className="flex items-center gap-3">
+          <div className="w-11 h-11 bg-blue-600 rounded-lg flex items-center justify-center font-bold">
+            EH
+          </div>
+          <div>
+            <div className="text-xl font-semibold">EmployHub</div>
+            <div className="text-sm text-slate-400">People operations</div>
+          </div>
+        </div>
+
+        <div className="max-w-xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">
+            New employee access
+          </p>
+          <h1 className="text-5xl font-bold tracking-tight mt-4">
+            Create an account for your HR workspace.
+          </h1>
+          <p className="text-slate-300 mt-5 leading-7">
+            Register employee details once and keep the experience consistent
+            across dashboard, attendance, leave, and collaboration tools.
+          </p>
+        </div>
+
+        <p className="text-sm text-slate-400">
+          Already registered? Sign in with your company email.
+        </p>
+      </section>
+
+      <section className="flex items-center justify-center p-4 sm:p-8">
+        <div className="w-full max-w-2xl">
+          <div className="lg:hidden flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold">
+              EH
             </div>
-            <h1 className="text-3xl font-bold text-white">Create Account</h1>
-            <p className="text-blue-100 text-sm mt-1">
-              Join EmployHub and manage your career
-            </p>
+            <div>
+              <div className="text-xl font-semibold">EmployHub</div>
+              <div className="text-sm text-slate-500">People operations</div>
+            </div>
           </div>
 
-          {/* Form */}
-          <div className="px-8 py-8">
-            {errors.general && (
-              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700">
-                {errors.general}
-              </div>
-            )}
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-slate-200">
+            <div className="px-6 py-6 border-b border-slate-100">
+              <h1 className="text-2xl font-bold text-slate-950">
+                Create Account
+              </h1>
+              <p className="text-sm text-slate-500 mt-1">
+                Add your employee details to request workspace access.
+              </p>
+            </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Employee ID */}
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
-                  Employee ID
-                </label>
-                <input
-                  type="text"
-                  name="empId"
-                  value={formData.empId}
-                  onChange={handleChange}
-                  placeholder="EMP001"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                />
-              </div>
+            <div className="px-6 py-6">
+              {errors.general && (
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+                  {errors.general}
+                </div>
+              )}
 
-              {/* Name + Email */}
-              <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">
-                    Full Name *
+                    Employee ID
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="empId"
+                    value={formData.empId}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2.5 rounded-xl border transition ${
-                      errors.name
-                        ? "border-red-300 bg-red-50"
-                        : "border-slate-300 focus:ring-2 focus:ring-blue-500"
-                    }`}
+                    placeholder="EMP001"
+                    className={fieldClass}
                   />
-                  {errors.name && (
-                    <p className="text-xs text-red-600 mt-1">{errors.name}</p>
-                  )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-2.5 rounded-xl border transition ${
-                      errors.email
-                        ? "border-red-300 bg-red-50"
-                        : "border-slate-300 focus:ring-2 focus:ring-blue-500"
-                    }`}
-                  />
-                  {errors.email && (
-                    <p className="text-xs text-red-600 mt-1">{errors.email}</p>
-                  )}
-                </div>
-              </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`${fieldClass} ${
+                        errors.name ? "border-red-300 bg-red-50" : ""
+                      }`}
+                    />
+                    {errors.name && (
+                      <p className="text-xs text-red-600 mt-1">
+                        {errors.name}
+                      </p>
+                    )}
+                  </div>
 
-              {/* Passwords */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500"
-                  />
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`${fieldClass} ${
+                        errors.email ? "border-red-300 bg-red-50" : ""
+                      }`}
+                    />
+                    {errors.email && (
+                      <p className="text-xs text-red-600 mt-1">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <input
-                    type="password"
-                    name="password2"
-                    placeholder="Confirm Password"
-                    value={formData.password2}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
 
-              {/* Phone + Department */}
-              <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      className={`${fieldClass} ${
+                        errors.password ? "border-red-300 bg-red-50" : ""
+                      }`}
+                    />
+                    {errors.password && (
+                      <p className="text-xs text-red-600 mt-1">
+                        {errors.password}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Confirm Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password2"
+                      value={formData.password2}
+                      onChange={handleChange}
+                      className={`${fieldClass} ${
+                        errors.password2 ? "border-red-300 bg-red-50" : ""
+                      }`}
+                    />
+                    {errors.password2 && (
+                      <p className="text-xs text-red-600 mt-1">
+                        {errors.password2}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={fieldClass}
+                  />
+                  <input
+                    type="text"
+                    name="department"
+                    placeholder="Department"
+                    value={formData.department}
+                    onChange={handleChange}
+                    className={fieldClass}
+                  />
+                </div>
+
                 <input
                   type="text"
-                  name="phone"
-                  placeholder="Phone"
-                  value={formData.phone}
+                  name="position"
+                  placeholder="Position"
+                  value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500"
+                  className={fieldClass}
                 />
-                <input
-                  type="text"
-                  name="department"
-                  placeholder="Department"
-                  value={formData.department}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
 
-              {/* Position */}
-              <input
-                type="text"
-                name="position"
-                placeholder="Position"
-                value={formData.position}
-                onChange={handleChange}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500"
-              />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-3 rounded-lg bg-blue-600 text-white font-medium shadow-sm hover:bg-blue-700 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+                >
+                  {loading ? "Creating..." : "Create Account"}
+                </button>
+              </form>
+            </div>
 
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium shadow-md hover:shadow-lg hover:scale-[1.01] transition-all flex items-center justify-center gap-2"
+            <div className="px-6 py-4 bg-slate-50 border-t text-center text-sm text-slate-600">
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="text-blue-600 font-medium hover:underline"
               >
-                {loading ? "Creating..." : "Create Account"}
-              </button>
-            </form>
-          </div>
-
-          {/* Footer */}
-          <div className="px-8 py-4 bg-slate-50 border-t text-center text-sm text-slate-600">
-            Already have an account?{" "}
-            <Link
-              to="/login"
-              className="text-blue-600 font-medium hover:underline"
-            >
-              Sign in
-            </Link>
+                Sign in
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {toast && (
         <Toast message={toast} type="success" onClose={() => setToast(null)} />

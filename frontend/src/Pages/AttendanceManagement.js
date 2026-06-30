@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
-import { Card, Button, Table } from "../Components/common";
+import { Card } from "../Components/common";
 
 export default function AttendanceManagement() {
-  const [attendance, setAttendance] = useState([]);
-
   return (
     <div className="flex min-h-screen bg-slate-50">
       <Sidebar />

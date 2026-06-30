@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
 import { Card, Button } from "../Components/common";
-import { useAuth } from "../services/useAuth";
+import { useAuth } from "../App";
 function ProfilePage() {
   const { user } = useAuth();
 

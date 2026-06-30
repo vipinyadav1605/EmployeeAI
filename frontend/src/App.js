@@ -58,162 +58,96 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-// Protected Route Component
+function LoadingScreen() {
+  return (
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
+        <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
+          <span className="h-3 w-3 animate-pulse rounded-full bg-blue-600"></span>
+          Loading workspace...
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
 
-  if (loading)
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        Loading...
-      </div>
-    );
-  return user ? children : <Navigate to="/login" />;
+  if (loading) return <LoadingScreen />;
+  return user ? children : <Navigate to="/login" replace />;
 }
 
 // Role-Based Route Component
-function RoleRoute({ children, requiredRole }) {
+function RoleRoute({ children, requiredRole, requiredRoles }) {
   const { user, loading } = useAuth();
+  const allowedRoles = requiredRoles || (requiredRole ? [requiredRole] : []);
 
-  if (loading)
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        Loading...
-      </div>
-    );
-  if (!user) return <Navigate to="/login" />;
-  if (requiredRole && user.role !== requiredRole) {
-    return <Navigate to="/dashboard" />;
+  if (loading) return <LoadingScreen />;
+  if (!user) return <Navigate to="/login" replace />;
+  if (allowedRoles.length > 0 && !allowedRoles.includes(user.role)) {
+    return <Navigate to="/dashboard" replace />;
   }
   return children;
 }
 
-// Main App Component
+const protectedRoutes = [
+  { path: "/dashboard", element: <Dashboard /> },
+  { path: "/employees", element: <EmployeeManagement /> },
+  { path: "/leaves", element: <LeaveManagement /> },
+  { path: "/attendance", element: <AttendanceManagement /> },
+  { path: "/performance-reviews", element: <PerformanceReviews /> },
+  { path: "/projects", element: <ProjectManagement /> },
+  { path: "/chat", element: <ChatPage /> },
+  { path: "/notifications", element: <NotificationsPage /> },
+  { path: "/profile", element: <ProfilePage /> },
+  { path: "/ml", element: <MLPage /> },
+  { path: "/rag", element: <RAGPage /> },
+  { path: "/ai-chat", element: <AIChatPage /> },
+];
+
+const roleRoutes = [
+  {
+    path: "/bonuses",
+    element: <BonusManagement />,
+    requiredRoles: ["admin", "finance"],
+  },
+  { path: "/admin", element: <AdminDashboard />, requiredRole: "admin" },
+];
+
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          {/* Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Protected Routes */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
+          {protectedRoutes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={<ProtectedRoute>{route.element}</ProtectedRoute>}
+            />
+          ))}
 
-          {/* Employee Management Routes */}
-          <Route
-            path="/employees"
-            element={
-              <ProtectedRoute>
-                <EmployeeManagement />
-              </ProtectedRoute>
-            }
-          />
+          {roleRoutes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={
+                <RoleRoute
+                  requiredRole={route.requiredRole}
+                  requiredRoles={route.requiredRoles}
+                >
+                  {route.element}
+                </RoleRoute>
+              }
+            />
+          ))}
 
-          {/* Leave Routes */}
-          <Route
-            path="/leaves"
-            element={
-              <ProtectedRoute>
-                <LeaveManagement />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Attendance Routes */}
-          <Route
-            path="/attendance"
-            element={
-              <ProtectedRoute>
-                <AttendanceManagement />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Bonus Routes */}
-          <Route
-            path="/bonuses"
-            element={
-              <RoleRoute requiredRole="admin">
-                <BonusManagement />
-              </RoleRoute>
-            }
-          />
-
-          {/* Performance Reviews Routes */}
-          <Route
-            path="/performance-reviews"
-            element={
-              <ProtectedRoute>
-                <PerformanceReviews />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Project Routes */}
-          <Route
-            path="/projects"
-            element={
-              <ProtectedRoute>
-                <ProjectManagement />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Chat Routes */}
-          <Route
-            path="/chat"
-            element={
-              <ProtectedRoute>
-                <ChatPage />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Notifications Routes */}
-          <Route
-            path="/notifications"
-            element={
-              <ProtectedRoute>
-                <NotificationsPage />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Profile Routes */}
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute>
-                <ProfilePage />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Admin Routes */}
-          <Route
-            path="/admin"
-            element={
-              <RoleRoute requiredRole="admin">
-                <AdminDashboard />
-              </RoleRoute>
-            }
-          />
-
-          {/* Redirect */}
-          <Route path="/" element={<Navigate to="/dashboard" />} />
-          <Route path="*" element={<Navigate to="/dashboard" />} />
-          <Route path="/ml" element={<MLPage />} />
-          <Route path="/rag" element={<RAGPage />} />
-          <Route path="/ai-chat" element={<AIChatPage />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

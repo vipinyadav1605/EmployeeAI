@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
 import { Card, Button, Table } from "../Components/common";
 
 function BonusManagement() {
-  const [bonuses, setBonuses] = useState([]);
+  const [bonuses] = useState([]);
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">

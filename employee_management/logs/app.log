@@ -6412,3 +6412,54 @@ WARNING 2026-06-30 12:36:01,599 basehttp 9976 11740 "GET /api/leaves/?status=pen
 INFO 2026-06-30 12:36:01,602 basehttp 9976 14688 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
 WARNING 2026-06-30 12:36:01,648 log 9976 14688 Forbidden: /api/leaves/
 WARNING 2026-06-30 12:36:01,650 basehttp 9976 14688 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 13:19:22,280 basehttp 9976 1736 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+INFO 2026-06-30 13:19:22,357 basehttp 9976 1736 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 13:19:22,561 log 9976 7748 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:19:22,563 basehttp 9976 7748 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 13:19:22,587 log 9976 7748 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:19:22,597 basehttp 9976 7748 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 13:19:28,509 log 9976 7748 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:19:28,609 basehttp 9976 7748 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+WARNING 2026-06-30 13:19:28,888 log 9976 7748 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:19:28,960 basehttp 9976 7748 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+INFO 2026-06-30 13:19:32,653 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:19:32,741 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:19:37,079 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:19:37,157 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:19:41,020 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:19:41,105 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:19:46,466 basehttp 9976 11688 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 13:19:46,773 basehttp 9976 11688 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 13:19:49,983 basehttp 9976 11688 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 13:19:50,291 basehttp 9976 11688 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 13:20:09,809 basehttp 9976 7748 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 13:20:09,901 log 9976 1736 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:20:09,915 basehttp 9976 1736 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 13:20:09,916 basehttp 9976 7748 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 13:20:09,969 log 9976 1736 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:20:09,984 basehttp 9976 1736 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 13:20:57,499 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:20:57,562 basehttp 9976 11688 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:21:01,716 basehttp 9976 11688 "POST /api/chat-conversations/ HTTP/1.1" 201 234
+INFO 2026-06-30 13:21:07,192 basehttp 9976 11688 "POST /api/chat-conversations/ HTTP/1.1" 201 234
+INFO 2026-06-30 13:21:08,840 basehttp 9976 11688 "POST /api/chat-conversations/ HTTP/1.1" 201 234
+INFO 2026-06-30 13:34:28,153 basehttp 9976 13332 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:34:28,330 basehttp 9976 13332 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:35:46,379 basehttp 9976 13332 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:35:46,475 basehttp 9976 13332 "GET /api/employees/ HTTP/1.1" 200 859
+INFO 2026-06-30 13:36:06,307 basehttp 9976 13332 "POST /api/chat-conversations/ HTTP/1.1" 201 234
+WARNING 2026-06-30 13:36:33,577 log 9976 14020 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:36:33,580 basehttp 9976 14020 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+WARNING 2026-06-30 13:36:33,632 log 9976 14020 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:36:33,643 basehttp 9976 14020 "GET /api/leaves/?page=1&limit=20 HTTP/1.1" 403 63
+INFO 2026-06-30 13:36:34,051 basehttp 9976 14020 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+INFO 2026-06-30 13:36:34,139 basehttp 9976 14020 "GET /api/employees/?page=1&limit=1 HTTP/1.1" 200 859
+WARNING 2026-06-30 13:36:34,454 log 9976 12040 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:36:34,457 basehttp 9976 12040 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+WARNING 2026-06-30 13:36:34,482 log 9976 12040 Forbidden: /api/leaves/
+WARNING 2026-06-30 13:36:34,486 basehttp 9976 12040 "GET /api/leaves/?status=pending HTTP/1.1" 403 63
+INFO 2026-06-30 13:36:38,997 basehttp 9976 13332 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 13:36:39,316 basehttp 9976 13332 "GET /api/ml/feature_importance/ HTTP/1.1" 200 72
+INFO 2026-06-30 13:38:28,229 basehttp 9976 15248 "GET / HTTP/1.1" 200 35
+WARNING 2026-06-30 13:38:29,642 log 9976 15248 Not Found: /favicon.ico
+WARNING 2026-06-30 13:38:29,646 basehttp 9976 15248 "GET /favicon.ico HTTP/1.1" 404 2327

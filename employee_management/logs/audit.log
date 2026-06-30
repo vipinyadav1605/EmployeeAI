@@ -327,3 +327,13 @@ ERROR 2026-06-30 12:35:16,512 utils 9976 14688 API Exception: PermissionDenied
 ERROR 2026-06-30 12:35:16,620 utils 9976 14688 API Exception: PermissionDenied
 ERROR 2026-06-30 12:36:01,576 utils 9976 11740 API Exception: PermissionDenied
 ERROR 2026-06-30 12:36:01,645 utils 9976 14688 API Exception: PermissionDenied
+ERROR 2026-06-30 13:19:22,558 utils 9976 7748 API Exception: PermissionDenied
+ERROR 2026-06-30 13:19:22,584 utils 9976 7748 API Exception: PermissionDenied
+ERROR 2026-06-30 13:19:28,505 utils 9976 7748 API Exception: PermissionDenied
+ERROR 2026-06-30 13:19:28,884 utils 9976 7748 API Exception: PermissionDenied
+ERROR 2026-06-30 13:20:09,888 utils 9976 1736 API Exception: PermissionDenied
+ERROR 2026-06-30 13:20:09,965 utils 9976 1736 API Exception: PermissionDenied
+ERROR 2026-06-30 13:36:33,574 utils 9976 14020 API Exception: PermissionDenied
+ERROR 2026-06-30 13:36:33,629 utils 9976 14020 API Exception: PermissionDenied
+ERROR 2026-06-30 13:36:34,450 utils 9976 12040 API Exception: PermissionDenied
+ERROR 2026-06-30 13:36:34,479 utils 9976 12040 API Exception: PermissionDenied

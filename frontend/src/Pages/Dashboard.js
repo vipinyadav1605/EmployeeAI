@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../App";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
@@ -6,17 +7,17 @@ import { Card } from "../Components/common";
 import { employeeAPI, leaveAPI, attendanceAPI } from "../services/api";
 
 const colorMap = {
-  blue: "bg-blue-100 text-blue-600",
-  purple: "bg-purple-100 text-purple-600",
-  green: "bg-green-100 text-green-600",
-  orange: "bg-orange-100 text-orange-600",
+  blue: "bg-blue-50 text-blue-700",
+  purple: "bg-violet-50 text-violet-700",
+  green: "bg-emerald-50 text-emerald-700",
+  orange: "bg-amber-50 text-amber-700",
 };
 
 const progressMap = {
-  green: "bg-green-500",
+  green: "bg-emerald-500",
   blue: "bg-blue-500",
-  purple: "bg-purple-500",
-  orange: "bg-orange-500",
+  purple: "bg-violet-500",
+  orange: "bg-amber-500",
 };
 
 function Dashboard() {
@@ -51,14 +52,12 @@ function Dashboard() {
         {
           message: "John Doe requested leave",
           time: "2 hours ago",
-          icon: " ",
         },
         {
           message: "Team attendance marked for today",
           time: "5 hours ago",
-          icon: " ",
         },
-        { message: "Q4 bonuses announced", time: "1 day ago", icon: " " },
+        { message: "Q4 bonuses announced", time: "1 day ago" },
       ]);
     } catch (err) {
       console.error(err);
@@ -68,76 +67,70 @@ function Dashboard() {
   };
 
   const quickActions = [
-    { label: "Request Leave", icon: " ", path: "/leaves" },
-    { label: "Mark Attendance", icon: " ", path: "/attendance" },
-    { label: "View Performance", icon: " ", path: "/performance-reviews" },
-    { label: "Chat with Team", icon: " ", path: "/chat" },
+    { label: "Request Leave", path: "/leaves" },
+    { label: "Mark Attendance", path: "/attendance" },
+    { label: "View Performance", path: "/performance-reviews" },
+    { label: "Chat with Team", path: "/chat" },
   ];
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
+    <div className="flex min-h-screen bg-slate-50">
       <Sidebar />
 
       <main className="flex-1 ml-64 flex flex-col">
         <Header
-          title={`Welcome back, ${user?.name || "User"} `}
-          subtitle="Here’s what’s happening in your team"
+          title={`Welcome back, ${user?.name || "User"}`}
+          subtitle="Here is what is happening across your team today."
           stats={[
             { label: "Total Employees", value: stats.totalEmployees },
             { label: "Active Leaves", value: stats.activeLeaves },
-            { label: "Pending Tasks", value: "3" },
+            { label: "Pending Tasks", value: stats.pendingApprovals || "3" },
             { label: "Team Performance", value: "92%" },
           ]}
         />
 
-        <div className="flex-1 p-8 overflow-y-auto space-y-8">
-          {/*  Quick Actions */}
-          <div className="grid md:grid-cols-4 gap-6">
+        <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6">
+          <div className="grid md:grid-cols-4 gap-4">
             {quickActions.map((action) => (
-              <a
+              <Link
                 key={action.label}
-                href={action.path}
-                className="group relative bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                to={action.path}
+                className="group bg-white p-5 rounded-lg border border-slate-200 shadow-sm hover:border-blue-200 hover:shadow-md transition-all duration-200"
               >
-                {/* <div className="text-3xl mb-3 group-hover:scale-125 transition">
-                  {action.icon}
-                </div> */}
-
-                <h3 className="font-semibold text-slate-900">{action.label}</h3>
-
-                <p className="text-xs text-slate-500 mt-1">Click to access</p>
-
-                <div className="absolute inset-0 rounded-2xl bg-blue-500/5 opacity-0 group-hover:opacity-100 transition"></div>
-              </a>
+                <h3 className="font-semibold text-slate-950">
+                  {action.label}
+                </h3>
+                <p className="text-xs text-slate-500 mt-1">Open workspace</p>
+              </Link>
             ))}
           </div>
 
-          {/* Activity + Events */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Activity */}
+          <div className="grid lg:grid-cols-2 gap-6">
             <Card title="Recent Activity" subtitle="Latest updates">
               <div className="space-y-4">
-                {recentActivities.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex gap-4 items-start border-b border-slate-200 pb-4 last:border-0"
-                  >
-                    {/* <div className="text-2xl">{item.icon}</div> */}
-
-                    <div>
-                      <p className="text-sm font-medium text-slate-900">
-                        {item.message}
-                      </p>
-                      <p className="text-xs text-slate-500">{item.time}</p>
+                {loading ? (
+                  <p className="text-sm text-slate-500">Loading activity...</p>
+                ) : (
+                  recentActivities.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex gap-4 items-start border-b border-slate-200 pb-4 last:border-0"
+                    >
+                      <div className="mt-1 h-2.5 w-2.5 rounded-full bg-blue-600"></div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-950">
+                          {item.message}
+                        </p>
+                        <p className="text-xs text-slate-500">{item.time}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
             </Card>
 
-            {/* Events */}
             <Card title="Upcoming Events">
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {[
                   { event: "Standup", date: "Today", color: "blue" },
                   { event: "Review", date: "Tomorrow", color: "purple" },
@@ -145,10 +138,10 @@ function Dashboard() {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="flex gap-4 items-center p-3 rounded-xl hover:bg-slate-100 transition"
+                    className="flex gap-4 items-center p-3 rounded-lg hover:bg-slate-50 transition"
                   >
                     <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold ${
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold ${
                         colorMap[item.color]
                       }`}
                     >
@@ -156,7 +149,9 @@ function Dashboard() {
                     </div>
 
                     <div>
-                      <p className="text-sm font-medium">{item.event}</p>
+                      <p className="text-sm font-medium text-slate-950">
+                        {item.event}
+                      </p>
                       <p className="text-xs text-slate-500">{item.date}</p>
                     </div>
                   </div>
@@ -165,9 +160,7 @@ function Dashboard() {
             </Card>
           </div>
 
-          {/*  Performance + Stats */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Performance */}
+          <div className="grid lg:grid-cols-2 gap-6">
             <Card title="Performance">
               <div className="space-y-5">
                 {[
@@ -193,16 +186,15 @@ function Dashboard() {
               </div>
             </Card>
 
-            {/* Quick Stats */}
             <Card title="Quick Stats">
               <div className="space-y-3">
                 {[
-                  { label: "Leave Balance", value: "12 days", color: "green" },
-                  { label: "Pending", value: "3", color: "purple" },
+                  { label: "Leave Balance", value: "12 days" },
+                  { label: "Pending", value: "3" },
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="flex justify-between p-4 rounded-xl bg-slate-50 hover:bg-slate-100 transition"
+                    className="flex justify-between p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition"
                   >
                     <span className="text-sm">{item.label}</span>
                     <span className="font-bold">{item.value}</span>

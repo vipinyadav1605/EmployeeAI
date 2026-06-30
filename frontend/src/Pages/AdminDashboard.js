@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
-import { Card, Button, Table, Modal } from "../Components/common";
+import { Card, Button, Table } from "../Components/common";
 import { employeeAPI } from "../services/api";
 
 export default function AdminDashboard() {
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedEmployee, setSelectedEmployee] = useState(null);
 
   useEffect(() => {
     fetchEmployees();

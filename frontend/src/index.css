@@ -1,11 +1,45 @@
-/* Google Fonts (optional but good) */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: global font */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f8fafc;
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  color: #0f172a;
+  background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 1023px) {
+  main.ml-64,
+  header.ml-64 {
+    margin-left: 0 !important;
+  }
+
+  main.flex-1 {
+    padding-bottom: 4.5rem;
+  }
 }

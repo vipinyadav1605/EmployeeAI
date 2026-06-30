@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
-import { Card, Button, Table } from "../Components/common";
+import { Card, Table } from "../Components/common";
 import { employeeAPI } from "../services/api";
 
 export default function EmployeeManagement() {
