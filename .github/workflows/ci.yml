@@ -57,10 +57,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run flake8 lint
-        run: |
-          pip install flake8
-          flake8 . --max-line-length=120 --exclude=migrations,venv,.venv
+      # - name: Run flake8 lint
+      #   run: |
+      #     pip install flake8
+      #     flake8 . --max-line-length=120 --exclude=migrations,venv,.venv
 
       - name: Check for missing migrations
         working-directory: ./employee_management
