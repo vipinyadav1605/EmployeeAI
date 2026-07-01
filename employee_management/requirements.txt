@@ -61,3 +61,4 @@ pypdf
 torch
 sentence-transformers
 python-dotenv
+langchain_google_genai
