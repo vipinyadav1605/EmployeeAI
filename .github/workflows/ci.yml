@@ -52,6 +52,7 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
+        working-directory: ./employee_management
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
@@ -62,7 +63,7 @@ jobs:
           flake8 . --max-line-length=120 --exclude=migrations,venv,.venv
 
       - name: Check for missing migrations
-        working-directory: ./project
+        working-directory: ./employee_management
         run: python manage.py makemigrations --check --dry-run
 
       - name: Run migrations
