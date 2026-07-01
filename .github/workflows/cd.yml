@@ -1,0 +1,118 @@
+# name: CD - Deploy Backend + Frontend (No Docker)
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   workflow_dispatch:
+
+# jobs:
+#   # ============================================
+#   # JOB 1: Deploy Django Backend
+#   # ============================================
+#   deploy-backend:
+#     name: Deploy Backend
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: production   # lets you require manual approval before this runs — set up in repo Settings → Environments
+
+#     steps:
+#       - name: Deploy backend via SSH
+#         uses: appleboy/ssh-action@v1.0.3
+#         with:
+#           host: ${{ secrets.SERVER_HOST }}
+#           username: ${{ secrets.SERVER_USER }}
+#           key: ${{ secrets.SERVER_SSH_KEY }}
+#           script: |
+#             set -e   # stop the script immediately if any command fails — prevents half-broken deploys
+
+#             cd /var/www/employee_management
+
+#             # Pull the exact code that was just pushed to main
+#             git fetch origin main
+#             git reset --hard origin/main
+
+#             # Activate the virtual environment that already exists on the server
+#             source venv/bin/activate
+
+#             # Install any new/updated dependencies
+#             pip install -r requirements.txt
+
+#             cd project
+
+#             # Apply any new database migrations
+#             python manage.py migrate --noinput
+
+#             # Gather static files into STATIC_ROOT for Nginx to serve
+#             python manage.py collectstatic --noinput
+
+#             # Restart the gunicorn process via systemd
+#             # (the service file is set up once, manually — see server-setup section)
+#             sudo systemctl restart gunicorn_employee_management
+
+#             # Quick health check — fail the deploy loudly if the app didn't come back up
+#             sleep 3
+#             curl -f http://localhost:8000/admin/ -o /dev/null -s || (echo "Health check failed" && exit 1)
+
+#   # ============================================
+#   # JOB 2: Deploy React Frontend
+#   # ============================================
+#   deploy-frontend:
+#     name: Deploy Frontend
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: production
+
+#     steps:
+#       # Build the React app HERE, on the GitHub runner — not on your server.
+#       # This keeps your production server from needing Node.js installed at all,
+#       # and means the build step doesn't compete with your live app for CPU/RAM.
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "20"
+#           cache: "npm"
+#           cache-dependency-path: frontend/package-lock.json
+
+#       - name: Install dependencies
+#         working-directory: ./frontend
+#         run: npm ci
+
+#       - name: Build production bundle
+#         working-directory: ./frontend
+#         run: npm run build
+#         env:
+#           # If your React app calls the backend API, bake the production URL
+#           # in at build time (CRA inlines REACT_APP_* vars into the bundle)
+#           REACT_APP_API_URL: ${{ secrets.PRODUCTION_API_URL }}
+
+#       # Copy only the built static files to the server —
+#       # not the source code, not node_modules, just the final HTML/JS/CSS
+#       - name: Upload build to server via rsync
+#         uses: burnett01/rsync-deployments@7.0.1
+#         with:
+#           switches: -avzr --delete
+#           # -a = archive mode (preserves permissions/timestamps)
+#           # -v = verbose (shows what's being copied in the logs)
+#           # -z = compress during transfer (faster over network)
+#           # -r = recursive (copy the whole build/ folder)
+#           # --delete = remove old files on the server that no longer exist
+#           #            in the new build (prevents stale JS bundles lingering)
+#           path: frontend/build/
+#           remote_path: /var/www/frontend_build/
+#           remote_host: ${{ secrets.SERVER_HOST }}
+#           remote_user: ${{ secrets.SERVER_USER }}
+#           remote_key: ${{ secrets.SERVER_SSH_KEY }}
+
+#       # Nginx serves static files directly from disk — no restart needed,
+#       # it picks up new files on the next request automatically.
+#       # We only reload Nginx in case its config itself changed.
+#       - name: Reload Nginx (safety net)
+#         uses: appleboy/ssh-action@v1.0.3
+#         with:
+#           host: ${{ secrets.SERVER_HOST }}
+#           username: ${{ secrets.SERVER_USER }}
+#           key: ${{ secrets.SERVER_SSH_KEY }}
+#           script: sudo systemctl reload nginx
