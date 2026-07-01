@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+
+  backend:
+    build:
+      context: ./employee_management
+
+    container_name: employee_backend
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - ./employee_management/.env
+
+  frontend:
+    build:
+      context: ./frontend
+
+    container_name: employee_frontend
+
+    ports:
+      - "3000:80"
+
+    depends_on:
+      - backend
