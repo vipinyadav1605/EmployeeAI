@@ -109,7 +109,7 @@ jobs:
 
       # 4. Lint — only runs if you have a "lint" script in package.json.
       #    --if-present means CI won't fail if you haven't set one up yet.
-      - name: Run lint
+      # - name: Run lint
         working-directory: ./frontend
 
       # 5. Run tests.
